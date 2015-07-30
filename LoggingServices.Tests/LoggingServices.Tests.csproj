@@ -7,8 +7,8 @@
     <ProjectGuid>{2BA3B893-7A7A-4C92-8454-EEDAC0EBA2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoggingServices.Test</RootNamespace>
-    <AssemblyName>LoggingServices.Test</AssemblyName>
+    <RootNamespace>LoggingServices.Tests</RootNamespace>
+    <AssemblyName>LoggingServices.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

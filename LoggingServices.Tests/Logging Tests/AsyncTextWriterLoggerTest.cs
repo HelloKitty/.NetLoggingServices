@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LoggingServices.Test
+namespace LoggingServices.Tests
 {
 	[TestFixture]
 	public static class AsyncTextWriterLoggerTest

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoggingServices.Test
+namespace LoggingServices.Tests
 {
 	[TestFixture]
 	public static class LogMessageTests
