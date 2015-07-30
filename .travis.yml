@@ -1,14 +1,11 @@
 language: csharp
-solution: ./ServerSide.sln
+solution: ./LoggingServices.sln
 sudo: required
 
 install:
   - sudo apt-get install nunit-console
-  - nuget restore ./ServerSide.sln
+  - nuget restore ./LoggingServices.sln
 
 script:
   - xbuild ./ServerSide.sln
-  - nunit-console ./AuthServer.Tests/bin/Debug/AuthServer.Tests.dll
-  - nunit-console ./Common.Tests/bin/Debug/Common.Tests.dll
-  - nunit-console ./GameServer.Tests/bin/Debug/GameServer.Tests.dll
-  - nunit-console ./ProxyServer.Tests/bin/Debug/ProxyServer.Tests.dll
+  - nunit-console ./LoggingServices.Tests/bin/Release/LoggingServices.Tests.dll
