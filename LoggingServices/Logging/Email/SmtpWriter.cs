@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Logging.Services
 {
@@ -32,10 +32,10 @@ namespace Logging.Services
 		public override void Write(string value)
 		{
 			//We wait because the caller is expecting this to be sycronous.
-			this.WriteLineAsync(value).Wait();
+			this.WriteLine(value);
 		}
 
-		public override Task WriteLineAsync(string value)
+		/*public override Task WriteLineAsync(string value)
 		{
 			using (MailMessage message = new MailMessage(header.From, header.To, header.Subject, value))
 			{
@@ -52,6 +52,6 @@ namespace Logging.Services
 		public override Task WriteAsync(string value)
 		{
 			return WriteLineAsync(value);	
-		}
+		}*/
 	}
 }
