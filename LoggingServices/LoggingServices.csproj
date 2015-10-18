@@ -42,7 +42,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Net35Essentials">
+    <Reference Include="Net35Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Net35Essentials\src\Net35Essentials\bin\Release\Net35Essentials.dll</HintPath>
     </Reference>
     <Reference Include="System" />
