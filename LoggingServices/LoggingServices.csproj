@@ -42,6 +42,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Net35Essentials">
+      <HintPath>..\lib\Net35Essentials\src\Net35Essentials\bin\Release\Net35Essentials.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,29 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\EnumExt.cs" />
     <Compile Include="Logging\ChainLogger.cs" />
-    <Compile Include="Logging\Email\ISmtpCredentials.cs" />
-    <Compile Include="Logging\Email\ISmtpHeader.cs" />
+    <Compile Include="Logging\Loggers\Networked Loggers\Email\ISmtpCredentials.cs" />
+    <Compile Include="Logging\Loggers\Networked Loggers\Email\ISmtpHeader.cs" />
     <Compile Include="Logging\ILoggingService.cs" />
-    <Compile Include="Logging\Loggers\AsyncTextWriterLogger.cs" />
-    <Compile Include="Logging\Message\IMessagePreparer.cs" />
-    <Compile Include="Logging\Email\SmtpWriter.cs" />
-    <Compile Include="Threading\IThreadedAccessContainer.cs" />
     <Compile Include="Logging\Message\LogMessage.cs" />
     <Compile Include="Logging\Loggers\ILogger.cs" />
     <Compile Include="Logging\Message\ILogMessage.cs" />
     <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\Loggers\Stream\StreamLogger.cs" />
+    <Compile Include="Logging\Processing\IMessagePreparer.cs" />
+    <Compile Include="Logging\Processing\RecyclingMessagePreparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Threading\Recyler.cs" />
-    <Compile Include="Threading\ThreadedAccessContainers\StringBuilderContainer.cs" />
+    <Compile Include="Resources\IThreadedAccessContainer.cs" />
+    <Compile Include="Resources\Recyler.cs" />
+    <Compile Include="Resources\StringBuilderContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logging\Networked Loggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

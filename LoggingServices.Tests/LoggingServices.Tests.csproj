@@ -48,8 +48,6 @@
   <ItemGroup>
     <Compile Include="Logging Tests\AsyncTextWriterLoggerTest.cs" />
     <Compile Include="Logging Tests\LogMessageTests.cs" />
-    <Compile Include="Logging Tests\MessagePreparerTest.cs" />
-    <Compile Include="Logging Tests\PreformanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

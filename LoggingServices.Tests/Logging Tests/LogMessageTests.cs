@@ -14,8 +14,10 @@ namespace LoggingServices.Tests
 		[Test]
 		public static void TestConstruction()
 		{
+			//arrange
 			LogMessage message = new LogMessage("Hi: {0}", LogLevel.Error, typeof(LogMessageTests), 2);
 
+			//assert
 			Assert.AreEqual(message.CallingType, typeof(LogMessageTests));
 			Assert.AreEqual(message.Level, LogLevel.Error);
 			Assert.IsNotNull(message.MainMessageObject);
@@ -25,8 +27,10 @@ namespace LoggingServices.Tests
 		[Test]
 		public static void TestBuildMessageWithParams()
 		{
+			//arrange
 			LogMessage message = new LogMessage("Hi: {0}", LogLevel.Error, typeof(LogMessageTests), 2);
 
+			//assert
 			Console.WriteLine(message.BuildMessage());
 			Assert.IsTrue(message.BuildMessage().Contains("Hi: 2"));
 			Assert.IsTrue(message.BuildMessage().Contains(typeof(LogMessageTests).ToString()));
@@ -37,9 +41,10 @@ namespace LoggingServices.Tests
 		[ExpectedException]
 		public static void TestBuildMessageWithoutParamsButExpectingParams()
 		{
+			//arrange
 			LogMessage message = new LogMessage("Hi: {0}", LogLevel.Error, typeof(LogMessageTests));
 
-			Console.WriteLine(message.BuildMessage());
+			message.BuildMessage();
 		}
 
 		[Test]
@@ -48,6 +53,7 @@ namespace LoggingServices.Tests
 			LogMessage message = new LogMessage("Hi: Blah", LogLevel.Error, typeof(LogMessageTests));
 
 			Console.WriteLine(message.BuildMessage());
+
 			Assert.IsTrue(message.BuildMessage().Contains("Hi: Blah"));
 			Assert.IsTrue(message.BuildMessage().Contains(typeof(LogMessageTests).ToString()));
 			Assert.IsTrue(message.BuildMessage().Contains(message.Level.ToString()));

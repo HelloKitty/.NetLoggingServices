@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-
+using System.Threading.Tasks;
 
 namespace LoggingServices.Tests
 {
@@ -15,7 +15,7 @@ namespace LoggingServices.Tests
 		[Test]
 		public static void LogMultipleMessageInParalell()
 		{
-			AsyncTextWriterLogger logger = new AsyncTextWriterLogger(LogLevel.All, new MessagePreparer(new StringBuilderContainer()), Console.Out);
+			StreamLogger logger = new StreamLogger(LogLevel.All, new RecyclingMessagePreparer(new StringBuilderContainer()), Console.Out);
 
 			Parallel.For(0, 1000, (i) =>
 				{
@@ -54,7 +54,7 @@ namespace LoggingServices.Tests
 		[Test]
 		public static void TestLoggerState()
 		{
-			AsyncTextWriterLogger logger = new AsyncTextWriterLogger(LogLevel.All, new MessagePreparer(new StringBuilderContainer()), Console.Out);
+			StreamLogger logger = new StreamLogger(LogLevel.All, new RecyclingMessagePreparer(new StringBuilderContainer()), Console.Out);
 
 			if (logger.State != LogLevel.All)
 				throw new Exception("Logger.State is not being set properly.");
@@ -64,14 +64,14 @@ namespace LoggingServices.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
 		public static void TrySupplyInvalidPreparer()
 		{
-			var logger = new AsyncTextWriterLogger(LogLevel.All, null, Console.Out);
+			var logger = new StreamLogger(LogLevel.All, null, Console.Out);
 		}
 
 		[Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public static void TrySupplyInvalidTextWriter()
 		{
-			var logger = new AsyncTextWriterLogger(LogLevel.All, new MessagePreparer(new StringBuilderContainer()), null);
+			var logger = new StreamLogger(LogLevel.All, new RecyclingMessagePreparer(new StringBuilderContainer()), null);
 		}
 	}
 }
