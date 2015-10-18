@@ -54,7 +54,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoggingServices\LoggingServices.csproj">
+    <ProjectReference Include="..\..\src\LoggingServices\LoggingServices.csproj">
       <Project>{42dd1efc-7056-4fef-ad8a-1a90fab6ca63}</Project>
       <Name>LoggingServices</Name>
     </ProjectReference>
