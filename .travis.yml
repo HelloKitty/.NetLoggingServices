@@ -8,4 +8,4 @@ install:
 
 script:
   - xbuild ./LoggingServices.sln
-  - nunit-console ./LoggingServices.Tests/bin/Debug/LoggingServices.Tests.dll
+  - nunit-console ./tests/LoggingServices.Tests/bin/Debug/LoggingServices.Tests.dll
