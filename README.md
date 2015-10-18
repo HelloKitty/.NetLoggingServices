@@ -1,10 +1,10 @@
-# .Net 4.5 Logging Services
+# .Net 3.5 Logging Services
 
-.Net 4.5 and Mono logging services for any application.
+.Net 3.5 and Mono logging services and interfaces for common logging API between projects and services.
 
 ##Why?
 
-This repo is aimed at producing a portable library for logging targeting .Net 4.5 and Mono. More importantly, it exists to provide a unified application agnostic logging service with general logging data such as caller and importance level. The idea is to provide an extendable API for logging while also keeping message logging consistent various projects.
+This repo is aimed at producing a portable library for logging targeting .Net 3.5 and Mono. More importantly, it exists to provide a unified application agnostic logging service with general logging data such as caller and importance level. The idea is to provide an extendable API for logging while also keeping message logging interface consistent accross projects.
 
 ##How to Use
 
@@ -12,7 +12,7 @@ There are many ways to utilize this library for logging messages in .Net.
 
 - Implement [ILogger](LoggingServices/Logging/Loggers/ILogger.cs) on a logging service.
 
-- Inherit from [ThreadedLogger](LoggingServices/Logging/ThreadedLogger.cs) and [ILogger](LoggingServices/Logging/Loggers/ILogger.cs) on a logging service to handle and log messages off the main thread.
+or
 
 - Utilize the prewritten [ILogger](LoggingServices/Logging/Loggers/ILogger.cs)s in the library.
 
@@ -24,9 +24,8 @@ There are many ways to utilize this library for logging messages in .Net.
 
 - Various other [ILogger](LoggingServices/Logging/Loggers/ILogger.cs)s that write to other locations such as; Database, flat file, sockets and more.
 
-
 #Build
 
 Windows: Verified Locally
 
-Linux/Mono: [![Build Status](https://travis-ci.org/HelloKitty/.NetLoggingServices.svg?branch=master)](https://travis-ci.org/HelloKitty/.NetLoggingServices)
+Linux/Mono: [![Build Status](https://travis-ci.org/HelloKitty/.NetLoggingServices.svg?branch=Net-3.5)](https://travis-ci.org/HelloKitty/.NetLoggingServices)
